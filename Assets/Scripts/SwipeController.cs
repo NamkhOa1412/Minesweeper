@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class SwipeController : MonoBehaviour
 {
     [SerializeField] int maxPage;
@@ -10,6 +10,7 @@ public class SwipeController : MonoBehaviour
 
     [SerializeField] float tweenTime;
     [SerializeField] LeanTweenType tweenType;
+    public Game game;
 
     private void Awake()
     {
@@ -37,5 +38,26 @@ public class SwipeController : MonoBehaviour
     public void MovePage()
     {
         levelPagesRect.LeanMoveLocal(targetPos, tweenTime).setEase(tweenType);
+    }
+
+    public void SelectLevel()
+    {
+        if (currentPage == 1)
+        {
+            PlayerPrefs.SetInt("Width", 16);
+            PlayerPrefs.SetInt("Height", 16);
+        }
+        else if (currentPage == 2)
+        {
+            PlayerPrefs.SetInt("Width", 32);
+            PlayerPrefs.SetInt("Height", 32);
+        }
+        else if (currentPage == 3)
+        {
+            PlayerPrefs.SetInt("Width", 64);
+            PlayerPrefs.SetInt("Height", 64);
+        }
+
+        SceneManager.LoadScene("GameScene");
     }
 }
