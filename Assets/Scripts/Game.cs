@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class Game : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class Game : MonoBehaviour
 
     private void Start()
     {
-        int newWidth = PlayerPrefs.GetInt("Width", 16);  // mặc định 16
+        int newWidth = PlayerPrefs.GetInt("Width", 16);
         int newHeight = PlayerPrefs.GetInt("Height", 16);
         NewGameWithLevel(newWidth, newHeight);
     }

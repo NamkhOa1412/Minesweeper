@@ -40,6 +40,6 @@ public class CameraZoom : MonoBehaviour
                 mainCamera.orthographicSize -= zoomModifier;
             }
         }
-        mainCamera.orthographicSize = Mathf.Clamp(mainCamera.orthographicSize, 2f, 10f);
+        mainCamera.orthographicSize = Mathf.Clamp(mainCamera.orthographicSize, 2f, 35f);
     }
 }

@@ -892,6 +892,7 @@ MonoBehaviour:
   levelPagesRect: {fileID: 1745833466}
   tweenTime: 0.5
   tweenType: 17
+  game: {fileID: 0}
 --- !u!1 &576344895
 GameObject:
   m_ObjectHideFlags: 0
