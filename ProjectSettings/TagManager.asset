@@ -6,6 +6,11 @@ TagManager:
   tags:
   - ResumeButton
   - Background
+  - SettingScreen
+  - SettingPopup
+  - LeverScreen
+  - GameOverUI
+  - GameWinUI
   layers:
   - Default
   - TransparentFX
@@ -14,7 +19,7 @@ TagManager:
   - Water
   - UI
   - Tilemap
-  - 
+  - UIOnly
   - 
   - 
   - 

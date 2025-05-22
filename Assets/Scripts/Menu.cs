@@ -7,6 +7,7 @@ public class Menu : MonoBehaviour
     public Button resumeButton;
     public GameObject MenuGame;
     public GameObject LevelScreen;
+    private GameObject settingsScreen;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,6 +22,15 @@ public class Menu : MonoBehaviour
                 resumeButton.gameObject.SetActive(false);
             }
         }
+        settingsScreen = GameObject.FindWithTag("SettingScreen");
+        if (settingsScreen != null)
+        {
+            settingsScreen.SetActive(false);
+        }
+        else
+        {
+            Debug.LogWarning("Không tìm thấy GameObject với tag 'SettingScreen'");
+        }
     }
 
     // Update is called once per frame
@@ -31,16 +41,43 @@ public class Menu : MonoBehaviour
 
     public void PlayGame()
     {
-        LevelScreen.SetActive(true);
+        if (settingsScreen != null && settingsScreen.activeSelf)
+        {
+            return;
+        }
+        else
+        {
+            LevelScreen.SetActive(true);
+        }
+    }
+
+    public void HideLevelSceen()
+    {
+        if (settingsScreen != null && settingsScreen.activeSelf)
+        {
+            return;
+        }
+        else
+        {
+            LevelScreen.SetActive(false);
+        }
     }
 
     public void QuitGame()
     {
-        PlayerPrefs.SetInt("HasStartedGame", 0);
-        PlayerPrefs.Save();
+        if (settingsScreen != null && settingsScreen.activeSelf || LevelScreen != null && LevelScreen.activeSelf)
+        {
+            return;
+        }
+        else
+        {
 
-        Application.Quit();
-        Debug.Log("Thoát game");
+            Debug.Log("Quit game...");
+            PlayerPrefs.SetInt("HasStartedGame", 0);
+            PlayerPrefs.Save();
+
+            Application.Quit();
+        }
     }
 
     public void OnNewGameClicked()
@@ -54,4 +91,28 @@ public class Menu : MonoBehaviour
         Debug.Log("Resume game...");
     }
 
+    public void OpenSettingPopup()
+    {
+        if (LevelScreen != null && LevelScreen.activeSelf)
+        {
+            return;
+        }else
+        {
+            if (settingsScreen != null)
+            {
+                bool isActive = settingsScreen.activeSelf;
+                settingsScreen.SetActive(!isActive);
+            }
+        }
+        
+    }
+
+    public void CloseSettingPopup()
+    {
+        if (settingsScreen != null)
+        {
+            bool isActive = settingsScreen.activeSelf;
+            settingsScreen.SetActive(!isActive);
+        }
+    }
 }

@@ -44,18 +44,18 @@ public class SwipeController : MonoBehaviour
     {
         if (currentPage == 1)
         {
-            PlayerPrefs.SetInt("Width", 16);
-            PlayerPrefs.SetInt("Height", 16);
+            PlayerPrefs.SetInt("Width", 9);
+            PlayerPrefs.SetInt("Height", 9);
         }
         else if (currentPage == 2)
         {
-            PlayerPrefs.SetInt("Width", 32);
-            PlayerPrefs.SetInt("Height", 32);
+            PlayerPrefs.SetInt("Width", 16);
+            PlayerPrefs.SetInt("Height", 16);
         }
         else if (currentPage == 3)
         {
-            PlayerPrefs.SetInt("Width", 64);
-            PlayerPrefs.SetInt("Height", 64);
+            PlayerPrefs.SetInt("Width", 30);
+            PlayerPrefs.SetInt("Height", 30);
         }
 
         SceneManager.LoadScene("GameScene");

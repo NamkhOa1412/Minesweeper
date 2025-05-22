@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e00a13eaca72b1b4b81882ea45de5efe
+guid: 2cd29b16f81a9fd49b5ec99cf5c4d90e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8832167503239892954
-    second: pngwing.com_0
+      213: -6870401975823772662
+    second: settings_sceengame_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pngwing.com_0
+      name: settings_sceengame_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 512
-        height: 512
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: adfcc53ac89229a70800000000000000
-      internalID: 8832167503239892954
+      spriteID: a04d1eecdcd67a0a0800000000000000
+      internalID: -6870401975823772662
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      pngwing.com_0: 8832167503239892954
+      settings_sceengame_0: -6870401975823772662
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
